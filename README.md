@@ -23,6 +23,7 @@ If you want to inpect things. You can right click like a normal webpage on the d
 
 ## TODO
 - Icons
+- Take baseURL as `arg`
 
 **Contact**
 - girish@hashnode.com

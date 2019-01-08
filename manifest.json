@@ -1,0 +1,11 @@
+{
+	"name": "Hashnode chrome extension",
+	"version": "0.1",
+	"description": "A chrome extension for Hashnode",
+	"permissions": [],
+	"background": {},
+	"browser_action": {
+		"default_popup": "index.html"
+	},
+	"manifest_version": 2
+}

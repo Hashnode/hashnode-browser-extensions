@@ -1,0 +1,20 @@
+{
+	"name": "hashnode-chrome",
+	"version": "1.0.0",
+	"main": "index.js",
+	"scripts": {
+		"start": "parcel index.html",
+		"build": "parcel build index.html && cp manifest.json ./dist/"
+	},
+	"repository": {},
+	"license": "MIT",
+	"dependencies": {
+		"axios": "^0.18.0",
+		"react": "^16.7.0",
+		"react-dom": "^16.7.0"
+	},
+	"devDependencies": {
+		"parcel": "^1.11.0",
+		"sass": "^1.15.3"
+	}
+}

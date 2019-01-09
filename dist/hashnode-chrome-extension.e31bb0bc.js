@@ -26257,7 +26257,7 @@ function (_Component) {
     key: "render",
     value: function render() {
       var post = this.props.post;
-      return _react.default.createElement("div", null, _react.default.createElement("img", {
+      return _react.default.createElement("div", null, post.coverImage && _react.default.createElement("img", {
         className: "post-cover",
         src: post.coverImage,
         width: "100%"
@@ -26311,12 +26311,26 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 
 var Loader = function Loader() {
   return _react.default.createElement("div", {
-    className: "spinner"
+    className: "loading-wrapper"
   }, _react.default.createElement("div", {
-    className: "double-bounce1"
+    className: "loading-card"
+  }, _react.default.createElement("div", {
+    className: "rect big"
   }), _react.default.createElement("div", {
-    className: "double-bounce2"
-  }));
+    className: "rect"
+  })), _react.default.createElement("div", {
+    className: "loading-card"
+  }, _react.default.createElement("div", {
+    className: "rect big"
+  }), _react.default.createElement("div", {
+    className: "rect"
+  })), _react.default.createElement("div", {
+    className: "loading-card"
+  }, _react.default.createElement("div", {
+    className: "rect big"
+  }), _react.default.createElement("div", {
+    className: "rect"
+  })));
 };
 
 var _default = Loader;
@@ -26507,7 +26521,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62850" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64251" + '/');
 
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);

@@ -3,3 +3,8 @@ node_modules
 npm-debug.log
 yarn-error.log
 .cache
+/dist
+dist/hashnode-chrome-extension.e31bb0bc.js
+yarn.lock
+dist/hashnode-chrome-extension.e31bb0bc.js
+dist/hashnode-chrome-extension.e31bb0bc.map

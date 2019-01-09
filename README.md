@@ -1,4 +1,4 @@
-# Hashnode Google Chrome extension
+# Hashnode Google Chrome extension 🕸
 
 A basic POC for Hashnode chrome extension, created on 8th of January 2019
 
@@ -12,6 +12,8 @@ Root folder is the source for extension.
 Run `yarn start` to start the react app. In order to live test the extension copy the `manifest.json` file manually to `./dist` folder.  
 Keep making changes the parcel takes care of the rest.  
 
+**🔴 Changes to the manifest.json must be made to the one in root folder**  
+
 To build for production  
 Run `yarn build` this time no need to copy manifest file manually everything is taken care of.
 
@@ -22,7 +24,6 @@ Visit `chrome://extension` hit `load unpacked` and select dist folder with `mani
 If you want to inpect things. You can right click like a normal webpage on the dropdown.
 
 ## TODO
-- Icons
 - Take baseURL as `arg`
 
 **Contact**

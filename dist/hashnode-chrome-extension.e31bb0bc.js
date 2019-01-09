@@ -26254,6 +26254,25 @@ function (_Component) {
   }
 
   _createClass(PostCard, [{
+    key: "getReplacedImage",
+    value: function getReplacedImage(src) {
+      var newSrc = 'https://cdn.hashnode.com/res/hashnode/image/upload/';
+      var parts = src.split('/upload/');
+      var format = parts[1].substring(parts[1].lastIndexOf('.') + 1);
+      var imageNameParts = parts[1].substring(1, src.split('/upload/')[1].length).split('/');
+      newSrc += imageNameParts[1].split('.')[0] + '/' + imageNameParts[0] + '.' + format;
+      return newSrc;
+    }
+  }, {
+    key: "loadProfileImage",
+    value: function loadProfileImage(src) {
+      if (src.indexOf('//res.cloudinary.com') !== -1 && src.indexOf('/upload/') !== -1) {
+        return this.getReplacedImage(src);
+      }
+
+      return src;
+    }
+  }, {
     key: "render",
     value: function render() {
       var post = this.props.post;
@@ -26276,8 +26295,8 @@ function (_Component) {
         target: "_blank",
         className: "author"
       }, _react.default.createElement("img", {
-        src: post.author && post.author.photo || dummyUserImage
-      }), post.author && post.author.name || 'Anonymous'), _react.default.createElement("div", {
+        src: post.author && this.loadProfileImage(post.author.photo) || dummyUserImage
+      })), _react.default.createElement("div", {
         className: "post-activity"
       }, _react.default.createElement("span", {
         className: "reactions"
@@ -26507,7 +26526,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62850" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58310" + '/');
 
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);

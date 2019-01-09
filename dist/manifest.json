@@ -1,11 +1,28 @@
 {
 	"name": "Hashnode chrome extension",
-	"version": "0.1",
+	"manifest_version": 2,
+	"version": "0.0.1",
 	"description": "A chrome extension for Hashnode",
 	"permissions": [],
 	"background": {},
 	"browser_action": {
 		"default_popup": "index.html"
 	},
-	"manifest_version": 2
+	"externally_connectable": {
+		"matches": ["*://*.hashnode.com/*"]
+	},
+	"author": "Hashnode",
+	"homepage_url": "http://extension.hashnode.com",
+	"default_icon": {
+		"16": "images/hn-logo-16.png",
+		"32": "images/hn-logo-32.png",
+		"48": "images/hn-logo-48.png",
+		"128": "images/hn-logo-128.png"
+	},
+	"icons": {
+        "16": "images/hn-logo-16.png",
+        "32": "images/hn-logo-32.png",
+        "48": "images/hn-logo-48.png",
+        "128": "images/hn-logo-128.png"
+    }
 }

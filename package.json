@@ -4,7 +4,7 @@
 	"main": "index.js",
 	"scripts": {
 		"start": "parcel index.html",
-		"build": "parcel build index.html && cp ./manifest.json ./dist"
+		"build": "parcel build index.html && cp ./manifest.json ./dist && cp -R ./images ./dist"
 	},
 	"repository": {},
 	"license": "MIT",

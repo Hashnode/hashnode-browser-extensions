@@ -4,6 +4,7 @@ npm-debug.log
 yarn-error.log
 .cache
 dist
+dist.zip
 ./dist
 .DS_Store
 yarn.lock

@@ -5,7 +5,7 @@ import './styles/App.scss';
 import PostCard from './components/PostCard';
 import Loader from './components/Loader';
 
-const baseURL = 'https://nodejs-express-blto69cyf.now.sh';
+const baseURL = 'https://hashnode.com';
 
 class App extends Component {
 
@@ -21,7 +21,7 @@ class App extends Component {
 	fetchHotPosts() {
 		let _this = this;
 		this.setState({ isLoading: true });
-		axios.get(`${baseURL}/hot`)
+		axios.get(`${baseURL}/ajax/posts/hot`)
 			.then(function (result) {
 				_this.setState({
 					posts: result.data.posts,
@@ -34,7 +34,7 @@ class App extends Component {
 	fetchTrendingPosts() {
 		let _this = this;
 		this.setState({ isLoading: true });
-		axios.get(`${baseURL}/trending`)
+		axios.get(`${baseURL}/ajax/posts/stories/trending`)
 			.then(function (result) {
 				_this.setState({
 					posts: result.data.posts,

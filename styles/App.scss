@@ -316,6 +316,7 @@ button{
                 -ms-flex-positive: 1;
                     flex-grow: 1;
             background: #fff;
+            font-size: 13px;
 
             &.active{
                 // border: 1px solid $hn-blue;
@@ -366,11 +367,12 @@ button{
         font-weight: bold;
         margin: 10px 0;
         color: $dark;
-        line-height: 25px;
+        line-height: normal;
+        font-size: 24px;
     }
     
     .post-desc{
-        font-size: 16px;
+        font-size: 18px;
         line-height: normal;
         color: #212121;
         font-family: abril-text, serif;
@@ -448,9 +450,13 @@ button{
     background: #fff;
     padding: 8px 10px;
     font-size: 14px;
-    -webkit-box-shadow: 0 0 6px rgba(0,0,0,0.2);
+    border-top: 1px solid #eee;
+    color: #757575;
+    // -webkit-box-shadow: 0 0 6px rgba(0,0,0,0.2);
 
     a{
-        font-size: 14px;
+        font-size: 13px;
+        font-weight: 600;
+        color: #656565;
     }
 }

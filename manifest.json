@@ -13,7 +13,7 @@
 		"matches": ["*://*.hashnode.com/*"]
 	},
 	"author": "Hashnode",
-	"homepage_url": "http://hashnode.com",
+	"homepage_url": "https://hashnode.com",
 	"default_icon": {
 		"16": "images/hn-logo-16.png",
 		"32": "images/hn-logo-32.png",

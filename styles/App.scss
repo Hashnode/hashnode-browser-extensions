@@ -341,6 +341,7 @@ button{
 
 .content{
     margin-top: 80px;
+    margin-bottom: 50px;
     padding: 0 15px;
 }
 
@@ -420,7 +421,7 @@ button{
             -ms-flex-align: center;
                 align-items: center;
 
-        span{
+        a{
             font-weight: bold;
             font-size: 13px;
             margin: 0 5px;
@@ -434,4 +435,22 @@ button{
         
     }
     
+}
+
+.footer{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    padding: 8px 10px;
+    font-size: 14px;
+    -webkit-box-shadow: 0 0 6px rgba(0,0,0,0.2);
+
+    a{
+        font-size: 14px;
+    }
 }

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 
 import './styles/App.scss';
+
 import PostCard from './components/PostCard';
 import Loader from './components/Loader';
 
@@ -61,9 +62,9 @@ class App extends Component {
 		return (
 			<div id="app">
 				<div className="header">
-					<div className="logo">
+					<a href="https://hashnode.com?utm_source=chrome_extension&utm_medium=extension" className="logo" target="_blank">
 						<img src={require('./images/hn-logo.jpeg')} />
-					</div>
+					</a>
 					<div className="nav">
 						<button className={this.state.context === 'hot' && 'active' || ''} onClick={() => this.fetchHotPosts()}> Hot discussions </button>
 						<button className={this.state.context === 'trending' && 'active' || ''} onClick={() => this.fetchTrendingPosts()}> Trending stories </button>
@@ -74,6 +75,10 @@ class App extends Component {
 						(this.state.isLoading && <Loader />) ||
 						(this.state.posts.length > 0 && <ul>{postsRender}</ul> || <small>Error in loading posts</small>)
 					}
+				</div>
+				<div className="footer">
+					<span>&copy; Hashnode</span>
+					<a href="#">Feedback</a>
 				</div>
 			</div>
 		);

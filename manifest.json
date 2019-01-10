@@ -1,7 +1,7 @@
 {
 	"name": "Hashnode chrome extension",
 	"manifest_version": 2,
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"description": "A chrome extension for Hashnode",
 	"permissions": [],
 	"background": {},

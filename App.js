@@ -77,8 +77,10 @@ class App extends Component {
 					}
 				</div>
 				<div className="footer">
-					<span>&copy; Hashnode</span>
-					<a href="#">Feedback</a>
+					<div>
+					<a href="https://hashnode.com?utm_source=chrome_extension&utm_medium=extension" target="_blank" rel="noopener">My feed</a> · <span>&copy; 2019</span>
+					</div>
+					<a href="https://l.hshno.de/chrome-extension-feedback" target="_blank" rel="noopener">Feedback</a>
 				</div>
 			</div>
 		);

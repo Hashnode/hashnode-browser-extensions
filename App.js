@@ -63,7 +63,7 @@ class App extends Component {
 			<div id="app">
 				<div className="header">
 					<a href="https://hashnode.com?utm_source=chrome_extension&utm_medium=extension" className="logo" target="_blank">
-						<img src={require('./images/hn-logo.jpeg')} />
+						<img src={require('./images/hn-logo.png')} />
 					</a>
 					<div className="nav">
 						<button className={this.state.context === 'hot' && 'active' || ''} onClick={() => this.fetchHotPosts()}> Hot discussions </button>

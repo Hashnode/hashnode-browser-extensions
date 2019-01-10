@@ -1,11 +1,11 @@
 {
-	"name": "Hashnode chrome extension",
+	"name": "Hashnode — The Dev Community",
 	"manifest_version": 2,
-	"version": "0.0.2",
-	"description": "A chrome extension for Hashnode",
+	"version": "0.0.3",
+	"description": "Hashnode Chrome Extension to read hot discussions and stories. Stay up-to-date with what's happening in the developer's community.",
 	"permissions": [],
 	"background": {},
-	"short_name": "Hashnode extension",
+	"short_name": "Hashnode",
 	"browser_action": {
 		"default_popup": "index.html"
 	},
@@ -13,7 +13,7 @@
 		"matches": ["*://*.hashnode.com/*"]
 	},
 	"author": "Hashnode",
-	"homepage_url": "http://extension.hashnode.com",
+	"homepage_url": "http://hashnode.com",
 	"default_icon": {
 		"16": "images/hn-logo-16.png",
 		"32": "images/hn-logo-32.png",

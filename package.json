@@ -3,8 +3,8 @@
 	"version": "1.0.0",
 	"main": "index.js",
 	"scripts": {
-		"start": "parcel index.html",
-		"build": "parcel build index.html && cp ./manifest.json ./dist && cp -R ./images ./dist"
+		"start-chrome": "parcel -d dist/dist-chrome index.html",
+		"build-chrome": "parcel build index.html -d dist/dist-chrome && cp -R ./chrome/* ./dist/dist-chrome"
 	},
 	"repository": {},
 	"license": "MIT",

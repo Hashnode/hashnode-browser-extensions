@@ -19,6 +19,9 @@ export class PostCard extends Component {
     }
 
     loadProfileImage(src){
+        if(!src){
+            return;
+        }
         if (src.indexOf('//res.cloudinary.com') !== -1 && src.indexOf('/upload/') !== -1) {
             return this.getReplacedImage(src);
         }
@@ -41,7 +44,7 @@ export class PostCard extends Component {
                     </a>
                     <div className="post-footer">
                         <a href={`${post.author ? 'https://hashnode.com/@'+post.author.username+'?utm_source=chrome_extension&utm_medium=extension' : ''}`} target="_blank" className="author">
-                            <img src={((post.author && this.loadProfileImage(post.author.photo)) || dummyUserImage)} />
+                            <img src={((post.author && post.author.photo && this.loadProfileImage(post.author.photo)) || dummyUserImage)} />
                         </a>
                         <div className="post-activity">
                             <a href={`https://hashnode.com/post/${post.slug}-${post.cuid}?utm_source=chrome_extension&utm_medium=extension`} target="_blank" className="reactions">

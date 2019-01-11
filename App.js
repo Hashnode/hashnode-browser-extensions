@@ -20,6 +20,7 @@ class App extends Component {
 	}
 
 	fetchHotPosts() {
+		window.scrollTo(0,0)
 		let _this = this;
 		this.setState({ isLoading: true });
 		axios.get(`${baseURL}/ajax/posts/hot`)
@@ -33,6 +34,7 @@ class App extends Component {
 	}
 
 	fetchTrendingPosts() {
+		window.scrollTo(0,0)
 		let _this = this;
 		this.setState({ isLoading: true });
 		axios.get(`${baseURL}/ajax/posts/stories/trending`)

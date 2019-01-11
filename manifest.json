@@ -1,7 +1,7 @@
 {
 	"name": "Hashnode — The Dev Community",
 	"manifest_version": 2,
-	"version": "0.0.3",
+	"version": "0.0.4",
 	"description": "Hashnode Chrome Extension to read hot discussions and stories. Stay up-to-date with what's happening in the developer's community.",
 	"permissions": [],
 	"background": {},
@@ -14,12 +14,6 @@
 	},
 	"author": "Hashnode",
 	"homepage_url": "https://hashnode.com",
-	"default_icon": {
-		"16": "images/hn-logo-16.png",
-		"32": "images/hn-logo-32.png",
-		"48": "images/hn-logo-48.png",
-		"128": "images/hn-logo-128.png"
-	},
 	"icons": {
         "16": "images/hn-logo-16.png",
         "32": "images/hn-logo-32.png",

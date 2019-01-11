@@ -4,13 +4,14 @@
 	"version": "0.0.4",
 	"description": "Hashnode Chrome Extension to read hot discussions and stories. Stay up-to-date with what's happening in the developer's community.",
 	"permissions": [],
-	"background": {},
 	"short_name": "Hashnode",
 	"browser_action": {
+		"default_icon": {
+			"19": "images/hn-logo-16.png",
+			"38": "images/hn-logo-32.png"
+		},
+		"default_title": "Hashnode",
 		"default_popup": "index.html"
-	},
-	"externally_connectable": {
-		"matches": ["*://*.hashnode.com/*"]
 	},
 	"author": "Hashnode",
 	"homepage_url": "https://hashnode.com",

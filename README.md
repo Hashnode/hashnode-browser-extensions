@@ -4,7 +4,7 @@ Google chrome and Mozilla firefox browser extension with hot & trending posts on
 Built with Node.js `v8.9` using React, Parcel, and Sass. 
 Follows Standard JS
 
-## Yarn setup
+## Setup
 ```
 git clone https://github.com/Hashnode/hashnode-chrome-extension
 yarn install --ignore-engines

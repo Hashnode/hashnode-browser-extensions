@@ -25,7 +25,7 @@
 				"default": "MacCtrl+Shift+H",
 				"linux": "Ctrl+Shift+H"
 			},
-			"description": "Send a 'toggle-feature' event"
+			"description": "Toggle Hashnode extension"
 		}
 	}
 }

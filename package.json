@@ -7,7 +7,8 @@
 		"start-chrome": "parcel -d dist/dist-chrome index.html",
 		"build-chrome": "parcel build index.html -d ./builds/chrome && cp -R ./chrome/* ./builds/chrome",
 		"start-firefox": "parcel -d dist/dist-firefox index.html",
-		"build-firefox": "parcel build index.html -d ./builds/firefox && cp -R ./firefox/* ./builds/firefox"
+		"build-firefox": "parcel build index.html -d ./builds/firefox && cp -R ./firefox/* ./builds/firefox",
+		"build-all": "yarn build-chrome && yarn build-firefox"
 	},
 	"repository": {},
 	"license": "MIT",

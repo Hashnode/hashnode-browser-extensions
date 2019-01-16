@@ -4,10 +4,10 @@
   "main": "index.js",
   "scripts": {
     "start": "parcel -d dist/web index.html",
-    "start-chrome": "parcel index.html -d ./dist/dist-chrome",
-    "build-chrome": "parcel build index.html -d ./builds/chrome && cp -R ./chrome/* ./builds/chrome",
-    "start-firefox": "parcel index.html -d ./dist/dist-firefox",
-    "build-firefox": "parcel build index.html -d ./builds/firefox && cp -R ./firefox/* ./builds/firefox",
+    "start-chrome": "browser=chrome parcel index.html -d ./dist/dist-chrome",
+    "build-chrome": "browser=chrome parcel build index.html -d ./builds/chrome && cp -R ./chrome/* ./builds/chrome",
+    "start-firefox": "browser=firefox parcel index.html -d ./dist/dist-firefox",
+    "build-firefox": "browser=firefox parcel build index.html -d ./builds/firefox && cp -R ./firefox/* ./builds/firefox",
     "build-all": "yarn build-chrome && yarn build-firefox",
     "test": "standard"
   },

@@ -7,6 +7,8 @@ import PostCard from './components/PostCard'
 import Loader from './components/Loader'
 
 const baseURL = 'https://hashnode.com'
+const browserType = process.env.browser || 'chrome'
+const utmVal = (browserType === 'chrome') ? 'chrome_extension' : 'FF_extension'
 
 class App extends Component {
   constructor (props) {
@@ -57,12 +59,12 @@ class App extends Component {
       return <li className='post' key={index}>
         <PostCard post={post} />
       </li>
-    })
+    }).reverse()
 
     return (
       <div id='app'>
         <div className='header'>
-          <a href='https://hashnode.com?utm_source=chrome_extension&utm_medium=extension' className='logo' target='_blank'>
+          <a href={`https://hashnode.com?utm_source=${utmVal}&utm_medium=extension`} className='logo' target='_blank'>
             <img src={require('./images/hn-logo.png')} />
           </a>
           <div className='nav'>
@@ -78,9 +80,9 @@ class App extends Component {
         </div>
         <div className='footer'>
           <div>
-            <a href='https://hashnode.com?utm_source=chrome_extension&utm_medium=extension' target='_blank' rel='noopener'>My feed</a> · <span>&copy; 2019</span>
+            <a href={`https://hashnode.com?utm_source=${utmVal}&utm_medium=extension`} target='_blank' rel='noopener'>My feed</a> · <span>&copy; 2019</span>
           </div>
-          <a href='https://l.hshno.de/chrome-extension-feedback' target='_blank' rel='noopener'>Feedback</a>
+          <a href='https://hashnode.typeform.com/to/oeFvmK' target='_blank' rel='noopener'>Feedback</a>
         </div>
       </div>
     )

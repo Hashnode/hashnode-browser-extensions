@@ -4,6 +4,9 @@ const thumbsImage = require('../images/thumbs.png')
 const commentsImage = require('../images/comments.png')
 const dummyUserImage = require('../images/dummyUser.png')
 
+const browserType = process.env.browser || 'chrome'
+const utmVal = (browserType === 'chrome') ? 'chrome_extension' : 'FF_extension'
+
 export class PostCard extends Component {
   getReplacedImage (src) {
     var newSrc = 'https://cdn.hashnode.com/res/hashnode/image/upload/'
@@ -34,7 +37,7 @@ export class PostCard extends Component {
           <a
             href={`https://hashnode.com/post/${post.slug}-${
               post.cuid
-            }?utm_source=chrome_extension&utm_medium=extension`}
+            }?utm_source=${utmVal}&utm_medium=extension`}
             target='_blank'
           >
             <img className='post-cover' src={post.coverImage} width='100%' />
@@ -44,11 +47,11 @@ export class PostCard extends Component {
           <a
             href={`https://hashnode.com/post/${post.slug}-${
               post.cuid
-            }?utm_source=chrome_extension&utm_medium=extension`}
+            }?utm_source=${utmVal}&utm_medium=extension`}
             target='_blank'
           >
             <h3 className='post-title'>{post.title}</h3>
-            <p className='post-desc'>{post.brief.substring(0, 140)}...</p>
+            { post.brief && <p className='post-desc'>{post.brief.substring(0, 140)}...</p> }
           </a>
           <div className='post-footer'>
             <a
@@ -56,7 +59,7 @@ export class PostCard extends Component {
                 post.author
                   ? 'https://hashnode.com/@' +
                     post.author.username +
-                    '?utm_source=chrome_extension&utm_medium=extension'
+                    `?utm_source=${utmVal}&utm_medium=extension`
                   : ''
               }`}
               target='_blank'
@@ -77,7 +80,7 @@ export class PostCard extends Component {
               <a
                 href={`https://hashnode.com/post/${post.slug}-${
                   post.cuid
-                }?utm_source=chrome_extension&utm_medium=extension`}
+                }?utm_source=${utmVal}&utm_medium=extension`}
                 target='_blank'
                 className='reactions'
               >
@@ -87,7 +90,7 @@ export class PostCard extends Component {
               <a
                 href={`https://hashnode.com/post/${post.slug}-${
                   post.cuid
-                }?utm_source=chrome_extension&utm_medium=extension`}
+                }?utm_source=${utmVal}&utm_medium=extension`}
                 target='_blank'
                 className='comments'
               >

@@ -1,7 +1,6 @@
-# Hashnode Google Chrome extension 🕸
+# Hashnode browser extension for Firefox and Google Chrome 🕸
 
-A Google chrome extension with hot & trending posts on tap. Built with Node.js `v8.9` using React, Parcel, and Sass.  
-
+Google chrome and Mozilla firefox browser extension with hot & trending posts on tap. Built with Node.js `v8.9` using React, Parcel, and Sass.  
 
 ## Setup
 

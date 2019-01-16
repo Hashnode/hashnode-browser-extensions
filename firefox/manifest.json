@@ -1,0 +1,31 @@
+{
+	"name": "Hashnode — The Dev Community",
+	"manifest_version": 2,
+	"version": "0.0.1",
+	"description": "Hashnode Firefox Extension to read hot discussions and stories. Stay up-to-date with what's happening in the developer's community.",
+	"permissions": [],
+	"short_name": "Hashnode",
+	"browser_action": {
+		"default_icon": {
+			"48": "images/hn-logo-48.png",
+			"96": "images/hn-logo-96.png"
+		},
+		"default_title": "Hashnode",
+		"default_popup": "index.html"
+	},
+	"author": "Hashnode",
+	"homepage_url": "https://hashnode.com",
+	"icons": {
+		"48": "images/hn-logo-48.png",
+		"96": "images/hn-logo-96.png"
+	},
+	"commands": {
+		"_execute_browser_action": {
+			"suggested_key": {
+				"default": "MacCtrl+Shift+H",
+				"linux": "Ctrl+Shift+H"
+			},
+			"description": "Send a 'toggle-feature' event"
+		}
+	}
+}

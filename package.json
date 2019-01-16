@@ -3,8 +3,12 @@
 	"version": "1.0.0",
 	"main": "index.js",
 	"scripts": {
-		"start": "parcel index.html",
-		"build": "parcel build index.html && cp ./manifest.json ./dist && cp -R ./images ./dist"
+		"start": "parcel -d dist/web index.html",
+		"start-chrome": "parcel index.html -d ./dist/dist-chrome",
+		"build-chrome": "parcel build index.html -d ./builds/chrome && cp -R ./chrome/* ./builds/chrome",
+		"start-firefox": "parcel index.html -d ./dist/dist-firefox",
+		"build-firefox": "parcel build index.html -d ./builds/firefox && cp -R ./firefox/* ./builds/firefox",
+		"build-all": "yarn build-chrome && yarn build-firefox"
 	},
 	"repository": {},
 	"license": "MIT",

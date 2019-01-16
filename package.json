@@ -1,24 +1,26 @@
 {
-	"name": "hashnode-browser-extension",
-	"version": "1.0.0",
-	"main": "index.js",
-	"scripts": {
-		"start": "parcel -d dist/web index.html",
-		"start-chrome": "parcel index.html -d ./dist/dist-chrome",
-		"build-chrome": "parcel build index.html -d ./builds/chrome && cp -R ./chrome/* ./builds/chrome",
-		"start-firefox": "parcel index.html -d ./dist/dist-firefox",
-		"build-firefox": "parcel build index.html -d ./builds/firefox && cp -R ./firefox/* ./builds/firefox",
-		"build-all": "yarn build-chrome && yarn build-firefox"
-	},
-	"repository": {},
-	"license": "MIT",
-	"dependencies": {
-		"axios": "^0.18.0",
-		"react": "^16.7.0",
-		"react-dom": "^16.7.0"
-	},
-	"devDependencies": {
-		"parcel": "^1.11.0",
-		"sass": "^1.15.3"
-	}
+  "name": "hashnode-browser-extension",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel -d dist/web index.html",
+    "start-chrome": "parcel index.html -d ./dist/dist-chrome",
+    "build-chrome": "parcel build index.html -d ./builds/chrome && cp -R ./chrome/* ./builds/chrome",
+    "start-firefox": "parcel index.html -d ./dist/dist-firefox",
+    "build-firefox": "parcel build index.html -d ./builds/firefox && cp -R ./firefox/* ./builds/firefox",
+    "build-all": "yarn build-chrome && yarn build-firefox",
+    "test": "standard"
+  },
+  "repository": {},
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0"
+  },
+  "devDependencies": {
+    "parcel": "^1.11.0",
+    "sass": "^1.15.3",
+    "standard": "^12.0.1"
+  }
 }

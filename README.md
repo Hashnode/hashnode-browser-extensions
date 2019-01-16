@@ -31,7 +31,7 @@ In order to live test the extension copy the `manifest.json` file manually to re
 ----
 
 **To build for production**  
-Run `yarn build`. This time no need to copy manifest file manually. Everything is taken care of.
+Run `yarn build-all`. This builds for both chrome and firefox. This time no need to copy manifest file manually. Everything is taken care of.
 
 ---
 

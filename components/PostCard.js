@@ -31,7 +31,14 @@ export class PostCard extends Component {
     return (
       <div>
         {post.coverImage && (
-          <img className='post-cover' src={post.coverImage} width='100%' />
+          <a
+            href={`https://hashnode.com/post/${post.slug}-${
+              post.cuid
+            }?utm_source=chrome_extension&utm_medium=extension`}
+            target='_blank'
+          >
+            <img className='post-cover' src={post.coverImage} width='100%' />
+          </a>
         )}
         <div className='post-details'>
           <a

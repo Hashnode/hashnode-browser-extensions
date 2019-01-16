@@ -5,7 +5,9 @@
 	"scripts": {
 		"start": "parcel -d dist/web index.html",
 		"start-chrome": "parcel -d dist/dist-chrome index.html",
-		"build-chrome": "parcel build index.html -d ./builds/chrome && cp -R ./chrome/* ./builds/chrome"
+		"build-chrome": "parcel build index.html -d ./builds/chrome && cp -R ./chrome/* ./builds/chrome",
+		"start-firefox": "parcel -d dist/dist-firefox index.html",
+		"build-firefox": "parcel build index.html -d ./builds/firefox && cp -R ./firefox/* ./builds/firefox"
 	},
 	"repository": {},
 	"license": "MIT",

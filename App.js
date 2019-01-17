@@ -24,7 +24,7 @@ class App extends Component {
     window.scrollTo(0, 0)
     let _this = this
     this.setState({ isLoading: true })
-    axios.get(`${baseURL}/ajax/posts/hot`)
+    axios.get(`${baseURL}/ajax/posts/hot/min`)
       .then(function (result) {
         _this.setState({
           posts: result.data.posts,
@@ -59,7 +59,7 @@ class App extends Component {
       return <li className='post' key={index}>
         <PostCard post={post} />
       </li>
-    }).reverse()
+    })
 
     return (
       <div id='app'>

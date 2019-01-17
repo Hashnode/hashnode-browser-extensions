@@ -7,20 +7,20 @@ Follows Standard JS
 ## Setup
 ```
 git clone https://github.com/Hashnode/hashnode-chrome-extension
-yarn install --ignore-engines
-yarn start // starts the web app
+npm install
+npm start // starts the web app
 ```
 ##### Google Chrome extension
 
 ```
-yarn start-chrome // same as web app but is served from ./dist/dist-chrome
-yarn build-chrome // builds for chrome and will be available in ./builds/chrome
+npm start-chrome // same as web app but is served from ./dist/dist-chrome
+npm build-chrome // builds for chrome and will be available in ./builds/chrome
 ```
 ##### Mozilla Firefox extension
 
 ```
-yarn start-firefox // same as web app but is served from ./dist/dist-firefox
-yarn build-firefox // builds for firefox and will be available in ./builds/firefox
+npm start-firefox // same as web app but is served from ./dist/dist-firefox
+npm build-firefox // builds for firefox and will be available in ./builds/firefox
 ```
 
 `manifest.json` files are maintained sperately for firefox and chrome in their respective folders.
@@ -31,7 +31,7 @@ In order to live test the extension copy the `manifest.json` file manually to re
 ----
 
 **To build for production**  
-Run `yarn build-all`. This builds for both chrome and firefox. This time no need to copy manifest file manually. Everything is taken care of.
+Run `npm build-all`. This builds for both chrome and firefox. This time no need to copy manifest file manually. Everything is taken care of.
 
 ---
 

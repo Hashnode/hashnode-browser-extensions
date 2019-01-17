@@ -7,6 +7,5 @@ dist
 dist.zip
 ./dist
 .DS_Store
-yarn.lock
 .vscode
 builds/

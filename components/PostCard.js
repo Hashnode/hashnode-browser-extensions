@@ -60,7 +60,9 @@ export class PostCard extends Component {
                   ? 'https://hashnode.com/@' +
                     post.author.username +
                     `?utm_source=${utmVal}&utm_medium=extension`
-                  : ''
+                  : `https://hashnode.com/post/${post.slug}-${
+                    post.cuid
+                  }?utm_source=${utmVal}&utm_medium=extension`
               }`}
               target='_blank'
               className='author'

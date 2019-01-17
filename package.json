@@ -11,7 +11,7 @@
     "build-all": "yarn build-chrome && yarn build-firefox",
     "test": "standard"
   },
-  "repository": {},
+  "repository": "git@github.com:Hashnode/hashnode-browser-extensions.git",
   "license": "MIT",
   "dependencies": {
     "axios": "^0.18.0",

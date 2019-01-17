@@ -13,14 +13,14 @@ npm start // starts the web app
 ##### Google Chrome extension
 
 ```
-npm start-chrome // same as web app but is served from ./dist/dist-chrome
-npm build-chrome // builds for chrome and will be available in ./builds/chrome
+npm run start-chrome // same as web app but is served from ./dist/dist-chrome
+npm run build-chrome // builds for chrome and will be available in ./builds/chrome
 ```
 ##### Mozilla Firefox extension
 
 ```
-npm start-firefox // same as web app but is served from ./dist/dist-firefox
-npm build-firefox // builds for firefox and will be available in ./builds/firefox
+npm run start-firefox // same as web app but is served from ./dist/dist-firefox
+npm run build-firefox // builds for firefox and will be available in ./builds/firefox
 ```
 
 `manifest.json` files are maintained sperately for firefox and chrome in their respective folders.
@@ -31,7 +31,7 @@ In order to live test the extension copy the `manifest.json` file manually to re
 ----
 
 **To build for production**  
-Run `npm build-all`. This builds for both chrome and firefox. This time no need to copy manifest file manually. Everything is taken care of.
+Run `npm run build-all`. This builds for both chrome and firefox. This time no need to copy manifest file manually. Everything is taken care of.
 
 ---
 

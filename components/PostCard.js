@@ -1,5 +1,3 @@
-import React, { Component } from 'react'
-
 const thumbsImage = require('../images/thumbs.png')
 const commentsImage = require('../images/comments.png')
 const dummyUserImage = require('../images/dummyUser.png')
@@ -7,7 +5,7 @@ const dummyUserImage = require('../images/dummyUser.png')
 const browserType = process.env.browser || 'chrome'
 const utmVal = (browserType === 'chrome') ? 'chrome_extension' : 'FF_extension'
 
-export class PostCard extends Component {
+export class PostCard extends React.Component {
   getReplacedImage (src) {
     var newSrc = 'https://cdn.hashnode.com/res/hashnode/image/upload/'
     var parts = src.split('/upload/')

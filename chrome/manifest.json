@@ -3,7 +3,6 @@
 	"manifest_version": 2,
 	"version": "0.0.6",
 	"description": "Hashnode Chrome Extension to read hot discussions and stories. Stay up-to-date with what's happening in the developer's community.",
-	"permissions": [],
 	"background": {},
 	"short_name": "Hashnode",
 	"browser_action": {
@@ -19,5 +18,6 @@
         "32": "images/hn-logo-32.png",
         "48": "images/hn-logo-48.png",
         "128": "images/hn-logo-128.png"
-    }
+		},
+	"content_security_policy": "script-src 'self' https://unpkg.com; object-src 'self'"
 }

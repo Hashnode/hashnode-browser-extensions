@@ -1,4 +1,3 @@
-import React, { Component } from 'react'
 import axios from 'axios'
 
 import './styles/App.scss'
@@ -10,7 +9,7 @@ const baseURL = 'https://hashnode.com'
 const browserType = process.env.browser || 'chrome'
 const utmVal = (browserType === 'chrome') ? 'chrome_extension' : 'FF_extension'
 
-class App extends Component {
+class App extends React.Component {
   constructor (props) {
     super(props)
     this.state = {

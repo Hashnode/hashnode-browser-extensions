@@ -1,7 +1,7 @@
 {
 	"name": "Hashnode — The Dev Community",
 	"manifest_version": 2,
-	"version": "0.0.6",
+	"version": "0.0.7",
 	"description": "Hashnode Chrome Extension to read hot discussions and stories. Stay up-to-date with what's happening in the developer's community.",
 	"background": {},
 	"short_name": "Hashnode",

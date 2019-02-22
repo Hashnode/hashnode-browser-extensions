@@ -1,0 +1,10 @@
+node_modules/
+npm-debug.log
+yarn-error.log
+.cache
+dist
+dist.zip
+./dist
+.DS_Store
+.vscode
+builds

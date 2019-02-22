@@ -9,7 +9,8 @@
     "start-firefox": "browser=firefox parcel index.html -d ./dist/dist-firefox",
     "build-firefox": "browser=firefox parcel build index.html -d ./builds/firefox && cp -R ./firefox/* ./builds/firefox",
     "build-all": "yarn build-chrome && yarn build-firefox",
-    "test": "standard"
+    "test": "standard",
+    "build-in-container": "./build.sh"
   },
   "repository": "git@github.com:Hashnode/hashnode-browser-extensions.git",
   "license": "MIT",

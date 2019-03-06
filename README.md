@@ -6,7 +6,7 @@ Follows Standard JS
 
 ## Setup
 ```
-git clone https://github.com/Hashnode/hashnode-chrome-extension
+git clone https://github.com/Hashnode/hashnode-browser-extensions.git
 yarn install
 yarn start // starts the web app
 ```
@@ -28,7 +28,7 @@ In order to live test the extension copy the `manifest.json` file manually to re
 
 **🔴 Changes to the manifest.json must be made to the respective folder and dist folder should be untouched. Instead manually copy if you are testing it locally**  
 
-##### Dockerised way of building
+#### Dockerised way of building
 
 Make sure you have docker running & yarn is installed in your computer
 Finally, run `yarn build-in-container`. This will throw build files in the end in a directory called `builds`

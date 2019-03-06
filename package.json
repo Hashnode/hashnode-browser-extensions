@@ -9,7 +9,6 @@
     "start-firefox": "browser=firefox parcel index.html -d ./dist/dist-firefox",
     "build-firefox": "browser=firefox parcel build index.html -d ./builds/firefox && cp -R ./firefox/* ./builds/firefox",
     "build-all": "yarn build-chrome && yarn build-firefox",
-    "test": "standard",
     "build-in-container": "./build.sh"
   },
   "repository": "git@github.com:Hashnode/hashnode-browser-extensions.git",
@@ -21,7 +20,6 @@
     "@babel/core": "^7.0.0-0",
     "@babel/preset-react": "^7.0.0",
     "parcel": "^1.11.0",
-    "sass": "^1.15.3",
-    "standard": "^12.0.1"
+    "sass": "^1.15.3"
   }
 }

@@ -7,31 +7,36 @@ Follows Standard JS
 ## Setup
 ```
 git clone https://github.com/Hashnode/hashnode-chrome-extension
-npm install
-npm start // starts the web app
+yarn install
+yarn start // starts the web app
 ```
 ##### Google Chrome extension
 
 ```
-npm run start-chrome // same as web app but is served from ./dist/dist-chrome
-npm run build-chrome // builds for chrome and will be available in ./builds/chrome
+yarn start-chrome // same as web app but is served from ./dist/dist-chrome
+yarn build-chrome // builds for chrome and will be available in ./builds/chrome
 ```
 ##### Mozilla Firefox extension
 
 ```
-npm run start-firefox // same as web app but is served from ./dist/dist-firefox
-npm run build-firefox // builds for firefox and will be available in ./builds/firefox
+yarn start-firefox // same as web app but is served from ./dist/dist-firefox
+yarn build-firefox // builds for firefox and will be available in ./builds/firefox
 ```
 
 `manifest.json` files are maintained sperately for firefox and chrome in their respective folders.
 In order to live test the extension copy the `manifest.json` file manually to respective `./dist/{dist-chrome|dist-firefox}` folder.  Keep making changes and the parcel takes care of the rest.  
 
-**🔴  Changes to the manifest.json must be made to the respective folder and dist folder should be untouched. Instead manually copy if you are testing it locally**  
+**🔴 Changes to the manifest.json must be made to the respective folder and dist folder should be untouched. Instead manually copy if you are testing it locally**  
+
+##### Dockerised way of building
+
+Make sure you have docker running & yarn is installed in your computer
+Finally, run `yarn build-in-container`. This will throw build files in the end in a directory called `builds`
 
 ----
 
 **To build for production**  
-Run `npm run build-all`. This builds for both chrome and firefox. This time no need to copy manifest file manually. Everything is taken care of.
+Run `yarn build-all`. This builds for both chrome and firefox. This time no need to copy manifest file manually. Everything is taken care of.
 
 ---
 

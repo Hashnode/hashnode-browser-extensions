@@ -18,6 +18,5 @@
         "32": "images/hn-logo-32.png",
         "48": "images/hn-logo-48.png",
         "128": "images/hn-logo-128.png"
-		},
-	"content_security_policy": "script-src 'self' https://unpkg.com; object-src 'self'"
+		}
 }

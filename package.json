@@ -14,7 +14,9 @@
   "repository": "git@github.com:Hashnode/hashnode-browser-extensions.git",
   "license": "MIT",
   "dependencies": {
-    "axios": "^0.18.0"
+    "axios": "^0.18.0",
+    "react": "^16.8.4",
+    "react-dom": "^16.8.4"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0-0",

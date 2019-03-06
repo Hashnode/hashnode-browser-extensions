@@ -1,3 +1,5 @@
+import React from 'react'
+
 const thumbsImage = require('../images/thumbs.png')
 const commentsImage = require('../images/comments.png')
 const dummyUserImage = require('../images/dummyUser.png')

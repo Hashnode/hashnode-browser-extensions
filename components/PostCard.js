@@ -30,12 +30,12 @@ export class PostCard extends React.Component {
 
   render () {
     const post = this.props.post
-
+    console.log(post.partOfPublication)
     return (
       <div>
         {post.coverImage && (
           <a
-            href={`https://hashnode.com/post/${post.slug}-${
+            href={`https://hashnode.com/${post.partOfPublication ? '' : 'post/'}${post.slug}-${
               post.cuid
             }?utm_source=${utmVal}&utm_medium=extension`}
             target='_blank'
@@ -45,7 +45,7 @@ export class PostCard extends React.Component {
         )}
         <div className='post-details'>
           <a
-            href={`https://hashnode.com/post/${post.slug}-${
+            href={`https://hashnode.com/${post.partOfPublication ? '' : 'post/'}${post.slug}-${
               post.cuid
             }?utm_source=${utmVal}&utm_medium=extension`}
             target='_blank'
@@ -80,7 +80,7 @@ export class PostCard extends React.Component {
             </a>
             <div className='post-activity'>
               <a
-                href={`https://hashnode.com/post/${post.slug}-${
+                href={`https://hashnode.com/${post.partOfPublication ? '' : 'post/'}${post.slug}-${
                   post.cuid
                 }?utm_source=${utmVal}&utm_medium=extension`}
                 target='_blank'
@@ -90,7 +90,7 @@ export class PostCard extends React.Component {
                 {post.totalReactions}
               </a>
               <a
-                href={`https://hashnode.com/post/${post.slug}-${
+                href={`https://hashnode.com/${post.partOfPublication ? '' : 'post/'}${post.slug}-${
                   post.cuid
                 }?utm_source=${utmVal}&utm_medium=extension`}
                 target='_blank'

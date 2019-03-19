@@ -1,7 +1,7 @@
 {
 	"name": "Hashnode — The Dev Community",
 	"manifest_version": 2,
-	"version": "0.0.8",
+	"version": "0.0.9",
 	"description": "Hashnode Firefox Extension to read hot discussions and stories. Stay up-to-date with what's happening in the developer's community.",
 	"permissions": [],
 	"short_name": "Hashnode",

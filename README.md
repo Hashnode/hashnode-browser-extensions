@@ -13,14 +13,24 @@ yarn start-web // starts the web app
 ##### Google Chrome extension
 
 ```
-yarn start-chrome // same as web app but is served from ./dist/dist-chrome
-yarn build-chrome // builds for chrome and will be available in ./builds/chrome
+yarn start-chrome // same as web app but is served from ./dist/dist-chrome  
+
+now copy `chrome/images` folder to `dist/dist-chrome`  
+
+yarn build-chrome // builds for chrome and will be available in ./builds/chrome  
+
+This time no need to copy anything
 ```
 ##### Mozilla Firefox extension
 
 ```
-yarn start-firefox // same as web app but is served from ./dist/dist-firefox
-yarn build-firefox // builds for firefox and will be available in ./builds/firefox
+yarn start-firefox // same as web app but is served from ./dist/dist-firefox  
+
+now copy `firefox/images` folder to `dist/dist-firefox`  
+
+yarn build-firefox // builds for firefox and will be available in ./builds/firefox  
+
+This time no need to copy anything
 ```
 
 `manifest.json` files are maintained sperately for firefox and chrome in their respective folders.

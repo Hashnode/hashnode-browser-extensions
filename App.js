@@ -10,6 +10,47 @@ const baseURL = 'https://hashnode.com'
 const browserType = process.env.browser || 'chrome'
 const utmVal = (browserType === 'chrome') ? 'chrome_extension' : 'FF_extension'
 
+import { Query } from 'react-apollo';
+import gql from 'graphql-tag';
+
+const STORIES_FEED_QUERY = gql`
+  query storiesFeed($limit: Int = 30){
+    storiesFeed(limit: $limit){
+      title
+      coverImage
+      partOfPublication
+      cuid
+      slug
+      brief
+      author{
+        username
+        photo
+      }
+      totalReactions
+      responseCount
+    }
+  }
+`
+
+const HOT_DISCUSSIONS_QUERY = gql`
+  query hotDiscussions($limit: Int = 30){
+    hotDiscussions(limit: $limit){
+      title
+      coverImage
+      partOfPublication
+      cuid
+      slug
+      brief
+      author{
+        username
+        photo
+      }
+      totalReactions
+      responseCount
+    }
+  }
+`
+
 class App extends React.Component {
   constructor (props) {
     super(props)
@@ -20,46 +61,17 @@ class App extends React.Component {
     }
   }
 
-  fetchHotPosts () {
-    window.scrollTo(0, 0)
-    let _this = this
-    this.setState({ isLoading: true })
-    axios.get(`${baseURL}/ajax/posts/hot/min`)
-      .then(function (result) {
-        _this.setState({
-          posts: result.data.posts,
-          context: 'hot',
-          isLoading: false
-        })
-      })
-  }
-
-  fetchTrendingPosts () {
-    window.scrollTo(0, 0)
-    let _this = this
-    this.setState({ isLoading: true })
-    axios.get(`${baseURL}/ajax/posts/stories/trending`)
-      .then(function (result) {
-        _this.setState({
-          posts: result.data.posts,
-          context: 'trending',
-          isLoading: false
-        })
-      })
-  }
-
   componentDidMount () {
-    this.fetchTrendingPosts()
   }
 
   render () {
-    const posts = this.state.posts
-
-    const postsRender = posts.map((post, index) => {
-      return <li className='post' key={index}>
-        <PostCard post={post} />
-      </li>
-    })
+    const postsRender = (posts) => {
+      return posts.map((post, index) => {
+                return <li className='post' key={index}>
+                  <PostCard post={post} />
+                </li>
+             })
+    }
 
     return (
       <div id='app'>
@@ -68,15 +80,20 @@ class App extends React.Component {
             <img src={require('./images/hn-logo.png')} />
           </a>
           <div className='nav'>
-            <button className={this.state.context === 'trending' ? 'active' : ''} onClick={() => this.fetchTrendingPosts()}> Stories </button>
-            <button className={this.state.context === 'hot' ? 'active' : ''} onClick={() => this.fetchHotPosts()}> Q&amp;A </button>
+            <button className={this.state.context === 'trending' ? 'active' : ''} onClick={() => this.setState({context: 'trending'})}> Stories </button>
+            <button className={this.state.context === 'hot' ? 'active' : ''} onClick={() => this.setState({context: 'hot'})}> Q&amp;A </button>
           </div>
         </div>
         <div className='content'>
-          {
-            (this.state.isLoading && <Loader />) ||
-            (this.state.posts.length > 0 ? <ul>{postsRender}</ul> : <small>Error in loading posts</small>)
-          }
+          <Query query={this.state.context === 'trending' ? STORIES_FEED_QUERY: (this.state.context === 'hot' && HOT_DISCUSSIONS_QUERY)} variables={{ limit: this.state.limit }}>
+            {({ data, loading, error }) => {
+              if (loading) return <Loader></Loader>
+              if (error) return <small>Error in loading posts</small>
+
+              const posts = this.state.context === 'trending' ? data.storiesFeed : data.hotDiscussions;
+              return <ul>{postsRender(posts) }</ul>
+            }}
+          </Query>
         </div>
         <div className='footer'>
           <div>

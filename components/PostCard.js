@@ -4,28 +4,23 @@ const thumbsImage = require('../images/thumbs.png')
 const commentsImage = require('../images/comments.png')
 const dummyUserImage = require('../images/dummyUser.png')
 
+const imageResizer = require('../utils/imageResizer').default;
+
 const browserType = process.env.browser || 'chrome'
 const utmVal = (browserType === 'chrome') ? 'chrome_extension' : 'FF_extension'
 
 export class PostCard extends React.Component {
-  getReplacedImage (src) {
-    var newSrc = 'https://cdn.hashnode.com/res/hashnode/image/upload/'
-    var parts = src.split('/upload/')
-    var format = parts[1].substring(parts[1].lastIndexOf('.') + 1)
-    var imageNameParts = parts[1].substring(1, src.split('/upload/')[1].length).split('/')
-    newSrc +=
-      imageNameParts[1].split('.')[0] + '/' + imageNameParts[0] + '.' + format
-    return newSrc
-  }
 
   loadProfileImage (src) {
     if (!src) {
       return
     }
-    if (src.indexOf('//res.cloudinary.com') !== -1 && src.indexOf('/upload/') !== -1) {
-      return this.getReplacedImage(src)
+    
+    if(src === '?sz=200') {
+      return dummyUserImage;
     }
-    return src
+    
+    return imageResizer(src, {w: 60, h: 60, c: 'face'}, dummyUserImage)
   }
 
   render () {

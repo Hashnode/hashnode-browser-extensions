@@ -52,7 +52,7 @@ const DISCUSSIONS_FEED_QUERY = gql`
 `
 
 class App extends React.Component {
-  constructor (props) {
+  constructor(props) {
     super(props)
     this.state = {
       context: 'trending',
@@ -61,16 +61,13 @@ class App extends React.Component {
     }
   }
 
-  componentDidMount () {
-  }
-
-  render () {
+  render() {
     const postsRender = (posts) => {
       return posts.map((post, index) => {
-                return <li className='post' key={index}>
-                  <PostCard post={post} />
-                </li>
-             })
+        return <li className='post' key={index}>
+          <PostCard post={post} />
+        </li>
+      })
     }
 
     return (
@@ -80,18 +77,18 @@ class App extends React.Component {
             <img src={require('./images/hn-logo.png')} />
           </a>
           <div className='nav'>
-            <button className={this.state.context === 'trending' ? 'active' : ''} onClick={() => this.setState({context: 'trending'})}> Stories </button>
-            <button className={this.state.context === 'hot' ? 'active' : ''} onClick={() => this.setState({context: 'hot'})}> Q&amp;A </button>
+            <button className={this.state.context === 'trending' ? 'active' : ''} onClick={() => this.setState({ context: 'trending' })}> Stories </button>
+            <button className={this.state.context === 'hot' ? 'active' : ''} onClick={() => this.setState({ context: 'hot' })}> Q&amp;A </button>
           </div>
         </div>
         <div className='content'>
-          <Query query={this.state.context === 'trending' ? STORIES_FEED_QUERY: (this.state.context === 'hot' && DISCUSSIONS_FEED_QUERY)} variables={{ limit: this.state.limit }}>
+          <Query query={this.state.context === 'trending' ? STORIES_FEED_QUERY : (this.state.context === 'hot' && DISCUSSIONS_FEED_QUERY)} variables={{ limit: this.state.limit }}>
             {({ data, loading, error }) => {
-              if (loading) return <Loader></Loader>
+              if (loading) return <Loader />
               if (error) return <small>Error in loading posts</small>
 
               const posts = this.state.context === 'trending' ? data.storiesFeed : data.discussionsFeed;
-              return <ul>{postsRender(posts) }</ul>
+              return <ul>{postsRender(posts)}</ul>
             }}
           </Query>
         </div>

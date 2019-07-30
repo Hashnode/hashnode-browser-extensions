@@ -32,9 +32,9 @@ const STORIES_FEED_QUERY = gql`
   }
 `
 
-const HOT_DISCUSSIONS_QUERY = gql`
-  query hotDiscussions($limit: Int = 30){
-    hotDiscussions(limit: $limit){
+const DISCUSSIONS_FEED_QUERY = gql`
+  query discussionsFeed($limit: Int = 30){
+    discussionsFeed(limit: $limit){
       title
       coverImage
       partOfPublication
@@ -85,12 +85,12 @@ class App extends React.Component {
           </div>
         </div>
         <div className='content'>
-          <Query query={this.state.context === 'trending' ? STORIES_FEED_QUERY: (this.state.context === 'hot' && HOT_DISCUSSIONS_QUERY)} variables={{ limit: this.state.limit }}>
+          <Query query={this.state.context === 'trending' ? STORIES_FEED_QUERY: (this.state.context === 'hot' && DISCUSSIONS_FEED_QUERY)} variables={{ limit: this.state.limit }}>
             {({ data, loading, error }) => {
               if (loading) return <Loader></Loader>
               if (error) return <small>Error in loading posts</small>
 
-              const posts = this.state.context === 'trending' ? data.storiesFeed : data.hotDiscussions;
+              const posts = this.state.context === 'trending' ? data.storiesFeed : data.discussionsFeed;
               return <ul>{postsRender(posts) }</ul>
             }}
           </Query>

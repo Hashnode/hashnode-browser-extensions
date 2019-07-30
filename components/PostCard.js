@@ -35,9 +35,7 @@ export class PostCard extends React.Component {
       <div>
         {post.coverImage && (
           <a
-            href={`https://hashnode.com/${post.partOfPublication ? '' : 'post/'}${post.slug}-${
-              post.cuid
-            }?utm_source=${utmVal}&utm_medium=extension`}
+            href={`https://hashnode.com/post/${post.partOfPublication ? post.cuid : post.slug+'-'+post.cuid}?utm_source=${utmVal}&utm_medium=extension`}
             target='_blank'
           >
             <img className='post-cover' src={post.coverImage} width='100%' />
@@ -45,9 +43,7 @@ export class PostCard extends React.Component {
         )}
         <div className='post-details'>
           <a
-            href={`https://hashnode.com/${post.partOfPublication ? '' : 'post/'}${post.slug}-${
-              post.cuid
-            }?utm_source=${utmVal}&utm_medium=extension`}
+            href={`https://hashnode.com/post/${post.partOfPublication ? post.cuid : post.slug+'-'+post.cuid}?utm_source=${utmVal}&utm_medium=extension`}
             target='_blank'
           >
             <h3 className='post-title'>{post.title}</h3>
@@ -80,9 +76,7 @@ export class PostCard extends React.Component {
             </a>
             <div className='post-activity'>
               <a
-                href={`https://hashnode.com/${post.partOfPublication ? '' : 'post/'}${post.slug}-${
-                  post.cuid
-                }?utm_source=${utmVal}&utm_medium=extension`}
+                href={`https://hashnode.com/post/${post.partOfPublication ? post.cuid : post.slug+'-'+post.cuid}?utm_source=${utmVal}&utm_medium=extension`}
                 target='_blank'
                 className='reactions'
               >
@@ -90,9 +84,7 @@ export class PostCard extends React.Component {
                 {post.totalReactions}
               </a>
               <a
-                href={`https://hashnode.com/${post.partOfPublication ? '' : 'post/'}${post.slug}-${
-                  post.cuid
-                }?utm_source=${utmVal}&utm_medium=extension`}
+                href={`https://hashnode.com/post/${post.partOfPublication ? post.cuid : post.slug+'-'+post.cuid}?utm_source=${utmVal}&utm_medium=extension`}
                 target='_blank'
                 className='comments'
               >

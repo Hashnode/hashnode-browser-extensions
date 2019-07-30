@@ -20,6 +20,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.0.0-0",
+    "@babel/preset-env": "^7.5.5",
     "@babel/preset-react": "^7.0.0",
     "parcel": "^1.11.0",
     "sass": "^1.15.3"

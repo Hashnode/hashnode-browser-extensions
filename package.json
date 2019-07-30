@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "parcel -d dist/web index.html",
+    "start-web": "parcel -d dist/web index.html",
     "start-chrome": "browser=chrome parcel index.html -d ./dist/dist-chrome",
     "build-chrome": "browser=chrome parcel build index.html -d ./builds/chrome && cp -R ./chrome/* ./builds/chrome",
     "start-firefox": "browser=firefox parcel index.html -d ./dist/dist-firefox",

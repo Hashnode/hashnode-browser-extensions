@@ -8,7 +8,7 @@ Follows Standard JS
 ```
 git clone https://github.com/Hashnode/hashnode-browser-extensions.git
 yarn install
-yarn start // starts the web app
+yarn start-web // starts the web app
 ```
 ##### Google Chrome extension
 

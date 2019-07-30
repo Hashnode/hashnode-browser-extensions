@@ -30,7 +30,6 @@ export class PostCard extends React.Component {
 
   render () {
     const post = this.props.post
-    console.log(post.partOfPublication)
     return (
       <div>
         {post.coverImage && (

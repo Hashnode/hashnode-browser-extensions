@@ -14,7 +14,7 @@ class App extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
-      context: 'hot',
+      context: 'trending',
       posts: [],
       isLoading: false
     }
@@ -49,7 +49,7 @@ class App extends React.Component {
   }
 
   componentDidMount () {
-    this.fetchHotPosts()
+    this.fetchTrendingPosts()
   }
 
   render () {
@@ -68,8 +68,8 @@ class App extends React.Component {
             <img src={require('./images/hn-logo.png')} />
           </a>
           <div className='nav'>
-            <button className={this.state.context === 'hot' ? 'active' : ''} onClick={() => this.fetchHotPosts()}> Q&amp;A </button>
             <button className={this.state.context === 'trending' ? 'active' : ''} onClick={() => this.fetchTrendingPosts()}> Stories </button>
+            <button className={this.state.context === 'hot' ? 'active' : ''} onClick={() => this.fetchHotPosts()}> Q&amp;A </button>
           </div>
         </div>
         <div className='content'>

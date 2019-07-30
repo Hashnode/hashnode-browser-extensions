@@ -90,18 +90,8 @@ class App extends React.Component {
               if (loading) return <Loader></Loader>
               if (error) return <small>Error in loading posts</small>
 
-              if (this.state.context === 'trending')
-                return (
-                  <ul>
-                      { postsRender(data.storiesFeed) }
-                  </ul>
-                )
-              else if (this.state.context === 'hot')
-                return (
-                  <ul>
-                    { postsRender(data.hotDiscussions) }
-                  </ul>
-                )
+              const posts = this.state.context === 'trending' ? data.storiesFeed : data.hotDiscussions;
+              return <ul>{postsRender(posts) }</ul>
             }}
           </Query>
         </div>

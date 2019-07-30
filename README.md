@@ -1,4 +1,4 @@
-# Hashnode browser extension for Firefox and Google Chrome 🕸
+## Hashnode browser extension for Firefox and Google Chrome 🕸
 
 Google chrome and Mozilla firefox browser extension with hot & trending posts on tap. 
 Built with Node.js `v8.9` using React, Parcel, and Sass. 
@@ -14,24 +14,23 @@ yarn start-web // starts the web app
 
 ```
 yarn start-chrome // same as web app but is served from ./dist/dist-chrome  
-
-now copy `chrome/images` folder to `dist/dist-chrome`  
-
-yarn build-chrome // builds for chrome and will be available in ./builds/chrome  
-
-This time no need to copy anything
 ```
+now copy `chrome/images` folder to `dist/dist-chrome`  and then load `dist/dist-chrome` into browser
+```
+yarn build-chrome // builds for chrome and will be available in ./builds/chrome  
+```
+This time no need to copy anything
+
 ##### Mozilla Firefox extension
 
 ```
-yarn start-firefox // same as web app but is served from ./dist/dist-firefox  
-
-now copy `firefox/images` folder to `dist/dist-firefox`  
-
-yarn build-firefox // builds for firefox and will be available in ./builds/firefox  
-
-This time no need to copy anything
+yarn start-firefox // same as web app but is served from ./dist/dist-firefox
 ```
+now copy `firefox/images` folder to `dist/dist-firefox` and then load `dist/dist-firefox` into browser
+```
+yarn build-firefox // builds for firefox and will be available in ./builds/firefox  
+```
+This time no need to copy anything
 
 `manifest.json` files are maintained sperately for firefox and chrome in their respective folders.
 In order to live test the extension copy the `manifest.json` file manually to respective `./dist/{dist-chrome|dist-firefox}` folder.  Keep making changes and the parcel takes care of the rest.  
@@ -44,11 +43,6 @@ Make sure you have docker running & yarn is installed in your computer
 Finally, run `yarn build-in-container`. This will throw build files in the end in a directory called `builds`
 
 ----
-
-**To build for production**  
-Run `yarn build-all`. This builds for both chrome and firefox. This time no need to copy manifest file manually. Everything is taken care of.
-
----
 
 ### Procedure to load extension for chrome
 Visit `chrome://extension` in Google Chrome, click on `Load unpacked` and select build/dist folder with `manifest.json` file in it and you are good to go.  

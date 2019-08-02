@@ -11,8 +11,7 @@ const cache = new InMemoryCache();
 const client = new ApolloClient({
   cache,
   link: new HttpLink({
-    // uri: 'https://api.hashnode.com/graphql',
-    uri: 'http://localhost:4000/graphql',
+    uri: 'https://api.hashnode.com/graphql',
     headers: {
       'client-name': 'Hashnode Browser Extension',
       'client-version': '0.0.1',

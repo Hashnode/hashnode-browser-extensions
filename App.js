@@ -14,8 +14,8 @@ import { Query } from 'react-apollo';
 import gql from 'graphql-tag';
 
 const STORIES_FEED_QUERY = gql`
-  query storiesFeed($limit: Int = 30){
-    storiesFeed(limit: $limit){
+  query storiesFeed($type: FeedType!, $page: Int = 0){
+    storiesFeed(type: $type,page: $page){
       title
       coverImage
       partOfPublication
@@ -33,8 +33,8 @@ const STORIES_FEED_QUERY = gql`
 `
 
 const DISCUSSIONS_FEED_QUERY = gql`
-  query discussionsFeed($limit: Int = 30){
-    discussionsFeed(limit: $limit){
+  query discussionsFeed($type: FeedType!, $page: Int = 0){
+    discussionsFeed(type: $type, page: $page){
       title
       coverImage
       partOfPublication
@@ -82,7 +82,7 @@ class App extends React.Component {
           </div>
         </div>
         <div className='content'>
-          <Query query={this.state.context === 'trending' ? STORIES_FEED_QUERY : (this.state.context === 'hot' && DISCUSSIONS_FEED_QUERY)} variables={{ limit: this.state.limit }}>
+          <Query query={this.state.context === 'trending' ? STORIES_FEED_QUERY : (this.state.context === 'hot' && DISCUSSIONS_FEED_QUERY)} variables={{ type: 'GLOBAL', page: 0}}>
             {({ data, loading, error }) => {
               if (loading) return <Loader />
               if (error) return <small>Error in loading posts</small>

@@ -21,9 +21,11 @@
     "axios": "^0.18.0",
     "graphql": "^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0",
     "graphql-tag": "^2.10.1",
-    "react": "^15.0.0 || ^16.0.0",
+    "react": "^16.8.0",
     "react-apollo": "^2.5.8",
-    "react-dom": "^15.0.0 || ^16.0.0"
+    "react-bottom-scroll-listener": "^3.0.0",
+    "react-dom": "^16.8.0",
+    "react-waypoint": "^9.0.2"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0-0",

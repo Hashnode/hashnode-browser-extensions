@@ -3,57 +3,19 @@ import axios from 'axios'
 
 import './styles/App.scss'
 
-import PostCard from './components/PostCard'
-import Loader from './components/Loader'
+import StoriesFeed from './components/StoriesFeed'
+import DiscussionsFeed from './components/DiscussionFeed'
 
 const baseURL = 'https://hashnode.com'
 const browserType = process.env.browser || 'chrome'
 const utmVal = (browserType === 'chrome') ? 'chrome_extension' : 'FF_extension'
 
-import { Query } from 'react-apollo';
-import gql from 'graphql-tag';
 
-const STORIES_FEED_QUERY = gql`
-  query storiesFeed($type: FeedType!, $page: Int = 0){
-    storiesFeed(type: $type,page: $page){
-      title
-      coverImage
-      partOfPublication
-      cuid
-      slug
-      brief
-      author{
-        username
-        photo
-      }
-      totalReactions
-      responseCount
-    }
-  }
-`
-
-const DISCUSSIONS_FEED_QUERY = gql`
-  query discussionsFeed($type: FeedType!, $page: Int = 0){
-    discussionsFeed(type: $type, page: $page){
-      title
-      coverImage
-      partOfPublication
-      cuid
-      slug
-      brief
-      author{
-        username
-        photo
-      }
-      totalReactions
-      responseCount
-    }
-  }
-`
 
 class App extends React.Component {
   constructor(props) {
     super(props)
+    this.page = 0
     this.state = {
       context: 'trending',
       posts: [],
@@ -62,14 +24,6 @@ class App extends React.Component {
   }
 
   render() {
-    const postsRender = (posts) => {
-      return posts.map((post, index) => {
-        return <li className='post' key={index}>
-          <PostCard post={post} />
-        </li>
-      })
-    }
-
     return (
       <div id='app'>
         <div className='header'>
@@ -82,15 +36,7 @@ class App extends React.Component {
           </div>
         </div>
         <div className='content'>
-          <Query query={this.state.context === 'trending' ? STORIES_FEED_QUERY : (this.state.context === 'hot' && DISCUSSIONS_FEED_QUERY)} variables={{ type: 'GLOBAL', page: 0}}>
-            {({ data, loading, error }) => {
-              if (loading) return <Loader />
-              if (error) return <small>Error in loading posts</small>
-
-              const posts = this.state.context === 'trending' ? data.storiesFeed : data.discussionsFeed;
-              return <ul>{postsRender(posts)}</ul>
-            }}
-          </Query>
+          { this.state.context === 'trending'? <StoriesFeed/> : <DiscussionsFeed/> }
         </div>
         <div className='footer'>
           <div>

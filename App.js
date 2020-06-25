@@ -32,7 +32,7 @@ class App extends React.Component {
           </a>
           <div className='nav'>
             <button className={this.state.context === 'trending' ? 'active' : ''} onClick={() => this.setState({ context: 'trending' })}> Stories </button>
-            <button className={this.state.context === 'hot' ? 'active' : ''} onClick={() => this.setState({ context: 'hot' })}> Q&amp;A </button>
+            <button className={this.state.context === 'hot' ? 'active' : ''} onClick={() => this.setState({ context: 'hot' })}> Discussions </button>
           </div>
         </div>
         <div className='content'>
@@ -42,7 +42,7 @@ class App extends React.Component {
           <div>
             <a href={`https://hashnode.com?utm_source=${utmVal}&utm_medium=extension`} target='_blank' rel='noopener'>My feed</a> · <span>&copy; {new Date().getFullYear()}</span>
           </div>
-          <a href='https://hashnode.typeform.com/to/oeFvmK' target='_blank' rel='noopener'>Feedback</a>
+          <a href='https://github.com/Hashnode/user-feedback' target='_blank' rel='noopener'>Feedback</a>
         </div>
       </div>
     )

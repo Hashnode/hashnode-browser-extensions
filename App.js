@@ -40,7 +40,7 @@ class App extends React.Component {
         </div>
         <div className='footer'>
           <div>
-            <a href={`https://hashnode.com?utm_source=${utmVal}&utm_medium=extension`} target='_blank' rel='noopener'>My feed</a> · <span>&copy; 2019</span>
+            <a href={`https://hashnode.com?utm_source=${utmVal}&utm_medium=extension`} target='_blank' rel='noopener'>My feed</a> · <span>&copy; {new Date().getFullYear()}</span>
           </div>
           <a href='https://hashnode.typeform.com/to/oeFvmK' target='_blank' rel='noopener'>Feedback</a>
         </div>
